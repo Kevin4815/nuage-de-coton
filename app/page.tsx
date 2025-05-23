@@ -116,7 +116,7 @@ export default function Home() {
                 <Baby className="w-12 h-12 text-yellow-500" />
               </div>
               <h3 className="text-xl font-bold mb-2 text-teal-600">Épanouissement</h3>
-              <p className="text-gray-600">Nous favorisons le développement et l'autonomie de chaque enfant.</p>
+              <p className="text-gray-600">Nous favorisons le développement et l&apos;autonomie de chaque enfant.</p>
             </div>
 
             <div className="bg-white rounded-xl shadow-md overflow-hidden border-none p-6 flex flex-col items-center text-center">
@@ -124,7 +124,7 @@ export default function Home() {
                 <Sparkles className="w-12 h-12 text-yellow-500" />
               </div>
               <h3 className="text-xl font-bold mb-2 text-teal-600">Créativité</h3>
-              <p className="text-gray-600">Nous encourageons l'imagination et l'expression artistique des enfants.</p>
+              <p className="text-gray-600">Nous encourageons l&apos;imagination et l&apos;expression artistique des enfants.</p>
             </div>
 
             <div className="bg-white rounded-xl shadow-md overflow-hidden border-none p-6 flex flex-col items-center text-center">
