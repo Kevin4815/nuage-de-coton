@@ -1,6 +1,63 @@
+"use client";
 import { Clock, Mail, MapPin, Phone } from "lucide-react"
+import { useState } from "react";
 
 export default function Contact() {
+
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+
+  const [isSendSucces, setIsSendSucces] = useState(false);
+  const [isSendError, setIsSendError] = useState(false);
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    try{
+      const res = await fetch('https://nuage-de-coton.novaryadigital.fr/contact.php', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstname,
+          lastname,
+          email,
+          phone,
+          message,
+        })
+      });
+    
+      const data = await res.json();
+      console.log("Réponse du serveur :", data);
+  
+      setFirstname("");
+      setLastName("");
+      setEmail("");
+      setPhone("");
+      setMessage("");
+  
+      setIsSendSucces(true);
+  
+      setTimeout(() => {
+        setIsSendSucces(false);
+      }, 3000);
+
+    } catch(e){
+      console.log("une erreur !!");
+      console.log(e);
+      setIsSendError(true)
+      setTimeout(() => {
+        setIsSendError(false);
+      }, 3000);
+      
+    }
+  }
+
   return (
     <div className="flex flex-col items-center">
       {/* Hero Section */}
@@ -37,13 +94,17 @@ export default function Contact() {
               <h2 className="text-2xl md:text-3xl font-bold mb-8 text-teal-600 title-font">Envoyez-nous un message</h2>
 
               <div className="bg-white rounded-xl shadow-md overflow-hidden border-none p-6">
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={(e) => onSubmit(e)}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
                         Prénom
                       </label>
                       <input
+                        type="text"
+                        required
+                        value={firstname}
+                        onChange={(e) => setFirstname(e.target.value)}
                         id="firstName"
                         placeholder="Votre prénom"
                         className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
@@ -54,6 +115,10 @@ export default function Contact() {
                         Nom
                       </label>
                       <input
+                        type="text"
+                        required
+                        value={lastname}
+                        onChange={(e) => setLastName(e.target.value)}
                         id="lastName"
                         placeholder="Votre nom"
                         className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
@@ -66,8 +131,11 @@ export default function Contact() {
                       Email
                     </label>
                     <input
-                      id="email"
                       type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      id="email"
                       placeholder="votre@email.com"
                       className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
                     />
@@ -78,6 +146,10 @@ export default function Contact() {
                       Téléphone
                     </label>
                     <input
+                      type="text"
+                      required
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
                       id="phone"
                       placeholder="Votre numéro de téléphone"
                       className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
@@ -89,13 +161,17 @@ export default function Contact() {
                       Message
                     </label>
                     <textarea
+                      value={message}
+                      required
+                      onChange={(e) => setMessage(e.target.value)}
                       id="message"
                       placeholder="Votre message"
                       rows={5}
                       className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
                     ></textarea>
                   </div>
-
+                  { isSendSucces && <p className="text-lime-500 text-center">Votre message a bien été envoyés</p> }
+                  { isSendError && <p className="text-red-600 text-center">Une erreur est survenue, veuillez réessayer plus tard</p> }
                   <button
                     type="submit"
                     className="w-full px-6 py-3 bg-yellow-300 hover:bg-yellow-400 text-black font-bold rounded-full"
