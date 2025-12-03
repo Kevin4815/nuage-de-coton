@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center">
       {/* Hero Section with Waves */}
-      <section className="w-full relative overflow-hidden bg-sky-200 pt-10 pb-32">
+      <section className="w-full relative overflow-hidden bg-[#78A1BB] pt-10 pb-32">
         <div className="cloud cloud1"></div>
         <div className="cloud cloud2"></div>
         <div className="cloud cloud3"></div>
@@ -14,16 +14,16 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="md:w-1/2 text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl font-bold text-teal-600 mb-4 title-font">
+              <h1 className="text-4xl md:text-5xl font-bold text-[#EBF5EE] mb-4 title-font">
                 Bienvenue à Nuage de coton
               </h1>
-              <p className="text-lg md:text-xl mb-6 text-gray-700">
-                Notre Maison d&apos;Assistante Maternelle accueille vos enfants de 10 semaines à 4 ans dans un cadre
+              <p className="text-lg md:text-xl mb-6 text-[#EBF5EE]">
+                Notre Maison d&apos;Assistante Maternelle accueille vos enfants de 10 semaines à 3 ans dans un cadre
                 chaleureux et ludique.
               </p>
               <Link
                 href="/contact"
-                className="inline-block px-6 py-3 bg-yellow-300 hover:bg-yellow-400 text-black font-bold rounded-full"
+                className="inline-block px-6 py-3 bg-[#8B786D] hover:bg-[#BFA89E] text-white font-bold rounded-full"
               >
                 Je pré-inscris mon enfant
               </Link>
@@ -31,7 +31,7 @@ export default function Home() {
             <div className="md:w-1/2 flex justify-center">
               <div className="relative w-64 h-64 md:w-80 md:h-80">
                 <Image
-                  src="/images/enfant-nuage.jpg?height=320&width=320"
+                  src="/images/ourson-nuage.jpg?height=320&width=320"
                   alt="Enfants jouant"
                   width={320}
                   height={320}
@@ -60,102 +60,94 @@ export default function Home() {
       {/* Notre Structure */}
       <section className="w-full py-16 bg-sky-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-teal-600 title-font">Notre Structure</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#78A1BB] title-font">Notre maison d'assistantes maternelles</h2>
 
-          <div className="flex flex-col md:flex-row items-center gap-8">
+          <div className="flex flex-col items-center text-center gap-8">
             <div className="md:w-1/2">
-              <p className="text-lg mb-4 text-gray-700">
-                La MAM Nuage de coton accueille vos enfants de 10 semaines à 4 ans, dans des locaux aménagés pour
-                l&apos;épanouissement, le développement et l&apos;éveil de votre enfant.
+              <p className="text-lg mb-4 text-[#5e503f]">
+                À la MAM Nuage de Coton, nous accueillons vos enfants dans un petit cocon pensé pour leurs épanouissement.
+                Ici, ils peuvent grandir sereinement, découvrir, jouer, s'apaiser... et être pleinement eux-mêmes
               </p>
-              <p className="text-lg mb-4 text-gray-700">
-                Située dans un quartier calme et verdoyant, notre MAM dispose de plusieurs places de parking facilitant
-                la dépose de votre enfant.
+              <p className="text-lg mb-4 text-[#5e503f]">
+                Située dans un cadre calme et verdouyant, la MAM offre une arrivée simple et sans stresse. À l'interieur, un espace chaleureux et luminaux attend vos enfants, compléter par un jolie jardin pour explorer et profiter du plein air.
               </p>
-              <p className="text-lg mb-6 text-gray-700">
-                C&apos;est dans un cadre lumineux et chaleureux, ainsi qu&apos;un joli jardin, que vos enfants seront
-                accueillis, tout un univers dédié à la petite enfance.
+              <p className="text-lg mb-6 text-[#5e503f]">
+                Chaque journée et rythmée par des activitées douces, du jeu libre, des moments de calme et surtout une présence attentive et bienveillante, pour que votre enfant se sente en sécurité comme à la maison
               </p>
-              <button className="px-4 py-2 rounded-full border border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white">
+              <p className="text-lg mb-6 text-[#5e503f]">
+                Bienvenue dans un univers pensé pour le bien être des tous petits... et la tranquillité des parents
+              </p>
+              <button className="px-4 py-2 rounded-full border border-[#8B786D] text-[#8B786D] hover:bg-[#8B786D] hover:text-white">
                 En savoir plus
               </button>
-            </div>
-            <div className="md:w-1/2">
-              <Image
-                src="/images/maison.jpg"
-                alt="Notre structure"
-                width={500}
-                height={400}
-                className="rounded-lg shadow-lg"
-              />
             </div>
           </div>
         </div>
       </section>
 
       {/* Nos Valeurs */}
-      <section className="w-full py-16 bg-green-100">
+      <section className="w-full py-16 bg-[#f2e9e4]">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-teal-600 title-font">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#5e503f] title-font">
             Des valeurs qui nous sont chères
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-white rounded-xl shadow-md overflow-hidden border-none p-6 flex flex-col items-center text-center">
-              <div className="w-24 h-24 bg-yellow-200 rounded-full flex items-center justify-center mb-4">
-                <Heart className="w-12 h-12 text-yellow-500" />
+              <div className="w-24 h-24 bg-[#BFA89E] rounded-full flex items-center justify-center mb-4">
+                <Heart className="w-12 h-12 text-[#8B786D]" />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-teal-600">Bienveillance</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold mb-2 text-[#5e503f]">Bienveillance</h3>
+              <p className="text-[#5e503f]">
                 Nous accueillons chaque enfant avec attention et respect de son individualité.
               </p>
             </div>
 
             <div className="bg-white rounded-xl shadow-md overflow-hidden border-none p-6 flex flex-col items-center text-center">
-              <div className="w-24 h-24 bg-yellow-200 rounded-full flex items-center justify-center mb-4">
-                <Baby className="w-12 h-12 text-yellow-500" />
+              <div className="w-24 h-24 bg-[#BFA89E] rounded-full flex items-center justify-center mb-4">
+                <Baby className="w-12 h-12 text-[#8B786D]" />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-teal-600">Épanouissement</h3>
-              <p className="text-gray-600">Nous favorisons le développement et l&apos;autonomie de chaque enfant.</p>
+              <h3 className="text-xl font-bold mb-2 text-[#5e503f]">Épanouissement</h3>
+              <p className="text-[#5e503f]">Nous favorisons le développement et l&apos;autonomie de chaque enfant.</p>
             </div>
 
             <div className="bg-white rounded-xl shadow-md overflow-hidden border-none p-6 flex flex-col items-center text-center">
-              <div className="w-24 h-24 bg-yellow-200 rounded-full flex items-center justify-center mb-4">
-                <Sparkles className="w-12 h-12 text-yellow-500" />
+              <div className="w-24 h-24 bg-[#BFA89E] rounded-full flex items-center justify-center mb-4">
+                <Sparkles className="w-12 h-12 text-[#8B786D]" />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-teal-600">Créativité</h3>
-              <p className="text-gray-600">Nous encourageons l&apos;imagination et l&apos;expression artistique des enfants.</p>
+              <h3 className="text-xl font-bold mb-2 text-[#5e503f]">Créativité</h3>
+              <p className="text-[#5e503f]">Nous encourageons l&apos;imagination et l&apos;expression artistique des enfants.</p>
             </div>
 
             <div className="bg-white rounded-xl shadow-md overflow-hidden border-none p-6 flex flex-col items-center text-center">
-              <div className="w-24 h-24 bg-yellow-200 rounded-full flex items-center justify-center mb-4">
-                <Clock className="w-12 h-12 text-yellow-500" />
+              <div className="w-24 h-24 bg-[#BFA89E] rounded-full flex items-center justify-center mb-4">
+                <Clock className="w-12 h-12 text-[#8B786D]" />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-teal-600">Adaptation</h3>
-              <p className="text-gray-600">Nous respectons le rythme et les besoins individuels de chaque enfant.</p>
+              <h3 className="text-xl font-bold mb-2 text-[#5e503f]">Adaptation</h3>
+              <p className="text-[#5e503f]">Nous respectons le rythme et les besoins individuels de chaque enfant.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="w-full py-16 bg-sky-200 relative overflow-hidden">
+      <section className="w-full py-20 bg-[#78A1BB] relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-teal-600 title-font">Venez découvrir notre MAM</h2>
-            <p className="text-lg mb-8 text-gray-700">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#EBF5EE] title-font">Venez découvrir notre MAM</h2>
+            <p className="text-lg mb-8 text-[#EBF5EE]">
               Nous serions ravis de vous accueillir et de vous faire visiter notre espace dédié aux enfants.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="px-6 py-3 bg-yellow-300 hover:bg-yellow-400 text-black font-bold rounded-full"
+                className="px-6 py-3 bg-[#8B786D] hover:bg-[#BFA89E] text-white font-bold rounded-full"
               >
-                Prendre rendez-vous
+                Contactez-nous
               </Link>
               <Link
                 href="/a-propos"
-                className="px-6 py-3 rounded-full border border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white"
+                className="px-6 py-3 rounded-full border border-[#283044] text-[#283044] hover:bg-[#283044] hover:text-white"
               >
                 En savoir plus
               </Link>

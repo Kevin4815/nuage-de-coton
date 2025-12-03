@@ -21,10 +21,10 @@ export default function Navigation() {
   ]
 
   return (
-    <header className="w-full bg-sky-100 py-4 px-4 md:px-6 sticky top-0 z-50 shadow-sm">
+    <header className="w-full bg-[#8B786D] py-4 px-4 md:px-6 sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center">
-          <span className="text-2xl md:text-3xl font-bold text-teal-600 title-font">Nuage de coton</span>
+          <span className="text-2xl md:text-3xl font-bold text-[#EBF5EE] title-font">Nuage de coton</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -34,8 +34,8 @@ export default function Navigation() {
               key={item.href}
               href={item.href}
               className={cn(
-                "text-lg font-medium transition-colors hover:text-teal-600",
-                pathname === item.href ? "text-teal-600" : "text-gray-600",
+                "text-lg font-medium transition-colors hover:text-[#EBF5EE]",
+                pathname === item.href ? "text-[#EBF5EE]" : "text-gray-600",
               )}
             >
               {item.name}
@@ -43,7 +43,7 @@ export default function Navigation() {
           ))}
           <Link
             href="/contact"
-            className="px-4 py-2 bg-yellow-300 hover:bg-yellow-400 text-black font-bold rounded-full"
+            className="px-4 py-2 bg-[#f2e9e4] hover:bg-[#BFA89E] text-[#78A1BB] font-bold rounded-full"
           >
             Pré-inscription
           </Link>

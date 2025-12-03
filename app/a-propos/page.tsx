@@ -5,14 +5,14 @@ export default function APropos() {
   return (
     <div className="flex flex-col items-center">
       {/* Hero Section */}
-      <section className="w-full relative overflow-hidden bg-sky-200 pt-10 pb-32">
+      <section className="w-full relative overflow-hidden bg-[#78A1BB] pt-10 pb-32">
         <div className="cloud cloud1"></div>
         <div className="cloud cloud2"></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-teal-600 mb-6 title-font">À Propos de Nous</h1>
-            <p className="text-lg md:text-xl mb-6 text-gray-700">
+            <h1 className="text-4xl md:text-5xl font-bold text-[#EBF5EE] mb-6 title-font">À Propos de Nous</h1>
+            <p className="text-lg md:text-xl mb-6 text-[#EBF5EE]">
               Découvrez notre équipe et notre projet pédagogique pour le bien-être et l&apos;épanouissement de vos
               enfants.
             </p>
@@ -34,124 +34,91 @@ export default function APropos() {
     {/* Notre Équipe */}
     <section className="w-full py-16 bg-sky-50">
     <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-teal-600 title-font">
-        Notre Équipe
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#78A1BB] title-font">
+        Qui nous sommes ?
         </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center max-w-4xl mx-auto">
+        <div>
         {/* Marie */}
-        <div className="w-full max-w-sm mx-auto bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-            <div className="aspect-square relative">
-            <Image
-                src="/images/personne-2.jpg?height=400&width=300"
-                alt="Sylvana"
-                fill
-                className="object-cover"
-            />
-            </div>
-            <div className="p-4">
-            <h3 className="text-lg font-bold mb-1 text-teal-600">Sylvana</h3>
-            <p className="text-sm text-gray-500 mb-2">Assistante Maternelle</p>
-            <p className="text-sm text-gray-600">
-                Diplômée du CAP Petite Enfance avec 10 ans d&apos;expérience, Sylvana est passionnée par l&apos;éveil
-                des tout-petits.
-            </p>
-            </div>
-        </div>
+        <svg viewBox="0 0 500 350" width="700" height="520" className="mx-auto">
+          <defs>
+            <clipPath id="cloudClip">
+              <path d="
+                M150 300
+                C 100 300, 70 260, 75 220
+                C 30 210, 35 160, 80 150
+                C 60 110, 110 70, 160 90
+                C 180 40, 260 40, 290 90
+                C 340 70, 390 110, 370 150
+                C 420 160, 430 210, 385 220
+                C 400 260, 370 300, 320 300
 
-        {/* Lucie */}
-        <div className="w-full max-w-sm mx-auto bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-            <div className="aspect-square relative">
-            <Image
-                src="/images/personne-1.jpg?height=400&width=300"
-                alt="Jordane"
-                fill
-                className="object-cover"
-            />
-            </div>
-            <div className="p-4">
-            <h3 className="text-lg font-bold mb-1 text-teal-600">Jordane</h3>
-            <p className="text-sm text-gray-500 mb-2">Assistante Maternelle</p>
-            <p className="text-sm text-gray-600">
-                Spécialisée dans l&apos;éveil musical et artistique, Jordane anime des ateliers créatifs adaptés aux
-                tout-petits.
-            </p>
-            </div>
-        </div>
-        </div>
+                C 290 320, 260 330, 230 300
+                C 200 330, 170 320, 150 300
+                Z"
+              />
+            </clipPath>
+          </defs>
+
+          <image
+            href="/images/personnes.jpg?height=320&width=320"
+            width="500"
+            height="450"
+            preserveAspectRatio="xMidYMid slice"
+            clipPath="url(#cloudClip)"
+          />
+        </svg>
+      </div>
+    </div>
+    <div className="max-w-3xl mx-auto mt-2 px-6 py-8  backdrop-blur-sm">
+      <p className="text-center text-lg leading-relaxed text-[#5e503f] mb-6">
+        <span className="font-semibold text-[#283044]">Jordane</span> et 
+        <span className="font-semibold text-[#283044]"> Sylvana</span>, deux professionnelles engagées et complémentaires, réunies par la même passion : accompagner les enfants dans la douceur, le respect et la bienveillance.
+      </p>
+
+      <p className="text-center text-lg leading-relaxed text-[#5e503f] mb-6">
+        Fortes de nos expériences auprès de jeunes enfants, nous partageons des valeurs communes qui sont au cœur de chaque journée à la MAM : l’écoute, la patience, la sécurité affective et le respect du rythme de chacun.
+      </p>
+
+      <p className="text-center text-lg leading-relaxed text-[#5e503f] mb-6">
+        À travers notre présence chaleureuse et nos personnalités différentes mais harmonieuses, nous offrons un environnement où chaque enfant peut grandir à son rythme, s’exprimer librement, découvrir, expérimenter et s’épanouir.
+      </p>
+
+      <p className="text-center text-lg leading-relaxed text-[#5e503f]">
+        Notre objectif : créer un lieu où l’on se sent en confiance, où l’enfant peut évoluer sereinement et où les familles se sentent accompagnées et soutenues.
+      </p>
     </div>
     </section>
 
       {/* Notre Projet Pédagogique */}
-      <section className="w-full py-16 bg-green-100">
+      <section className="w-full py-16 bg-[#f2e9e4]">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-teal-600 title-font">
-            Notre Projet Pédagogique
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#78A1BB] title-font">
+            Sur quel projet se repose notre MAM ?
           </h2>
 
           <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-1/2">
-              <Image
-                src="/images/enfant-jouant.jpg?height=400&width=500"
-                alt="Enfants jouant"
-                width={500}
-                height={400}
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-            <div className="md:w-1/2">
-              <p className="text-lg mb-6 text-gray-700">
-                Au sein de notre structure, nous pratiquons la motricité spontanée qui favorise l&apos;esprit
-                d&apos;initiative et la créativité de l&apos;enfant. Laisser l&apos;enfant libre de ses mouvements lui
-                permet d&apos;explorer son corps et de se développer en toute confiance.
-              </p>
 
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-yellow-200 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Brain className="w-6 h-6 text-yellow-500" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold mb-1 text-teal-600">Développement cognitif</h3>
-                    <p className="text-gray-600">
-                      Nous proposons des activités stimulantes adaptées à chaque âge pour favoriser
-                      l&apos;apprentissage.
-                    </p>
-                  </div>
-                </div>
+          <div className="md:w-1/2 text-center mx-auto">
+            <p className="text-lg mb-6 text-[#5e503f]">
+              À la MAM Nuage de Coton, notre projet pédagogique s’appuie sur une valeur essentielle : l’expression et la créativité. Nous souhaitons créer un environnement rassurant et bienveillant dans lequel l’enfant peut explorer, jouer, observer et apprendre à son propre rythme.
+              La bienveillance, l’écoute et la sécurité affective sont au cœur de chacune de nos journées.
+            </p>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-yellow-200 rounded-full flex items-center justify-center flex-shrink-0">
-                    <HeartHandshake className="w-6 h-6 text-yellow-500" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold mb-1 text-teal-600">Socialisation</h3>
-                    <p className="text-gray-600">
-                      Nous encourageons le partage et l&apos;apprentissage de la vie en collectivité dans un cadre
-                      bienveillant.
-                    </p>
-                  </div>
-                </div>
+            <p className="text-lg mb-6 text-[#5e503f]">
+              Nos activités encouragent l’autonomie, l’estime de soi, la découverte du monde et le plaisir d’apprendre. Nous proposons des temps de jeux libres, des ateliers sensoriels, du matériel artistique ainsi que des moments de calme et de relaxation afin que l’enfant s’exprime en toute liberté. La nature occupe également une place importante dans notre quotidien : nous aimons passer du temps à l’extérieur pour observer la nature, écouter les oiseaux, manipuler l’eau et profiter du jardin. Nous souhaiterions placer une petite plantation avec les enfants afin d’expérimenter, de prendre soin du vivant et de s’émerveiller en douceur.
+            </p>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-yellow-200 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Utensils className="w-6 h-6 text-yellow-500" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold mb-1 text-teal-600">Alimentation équilibrée</h3>
-                    <p className="text-gray-600">
-                      Nous proposons des repas sains et variés, préparés avec des produits frais et de saison.
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <p className="text-lg mb-6 text-[#5e503f]">
+              Dans notre MAM, tout est pensé pour le bien-être et la santé de vos enfants. Nous utilisons uniquement des produits naturels pour l’entretien et les jouets ainsi que des couches lavables afin de préserver l’environnement, leur santé et leur confort quotidien. Cela fait partie de notre engagement écologique et de notre volonté d’offrir un lieu sain et respectueux.
+            </p>
+
             </div>
           </div>
         </div>
       </section>
 
       {/* Nos Locaux */}
-      <section className="w-full py-16 bg-sky-50">
+      {/* <section className="w-full py-16 bg-sky-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-teal-600 title-font">Nos Locaux</h2>
 
@@ -194,7 +161,7 @@ export default function APropos() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }

@@ -61,15 +61,15 @@ export default function Contact() {
   return (
     <div className="flex flex-col items-center">
       {/* Hero Section */}
-      <section className="w-full relative overflow-hidden bg-sky-200 pt-10 pb-32">
+      <section className="w-full relative overflow-hidden bg-[#78A1BB] pt-10 pb-32">
         <div className="cloud cloud1"></div>
         <div className="cloud cloud2"></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-teal-600 mb-6 title-font">Contactez-Nous</h1>
-            <p className="text-lg md:text-xl mb-6 text-gray-700">
-              Nous sommes à votre disposition pour répondre à toutes vos questions et vous aider dans vos démarches.
+            <h1 className="text-4xl md:text-5xl font-bold text-[#EBF5EE] mb-6 title-font">Contactez-Nous</h1>
+            <p className="text-lg md:text-xl mb-6 text-[#EBF5EE]">
+              Envie d'en savoir d'avantage sur notre MAM ? Laissez-nous un petit message via le formulaire, nous vous répondrons avec plaisir
             </p>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function Contact() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-12">
             <div className="lg:w-1/2">
-              <h2 className="text-2xl md:text-3xl font-bold mb-8 text-teal-600 title-font">Envoyez-nous un message</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#5e503f] title-font">Envoyez-nous un message</h2>
 
               <div className="bg-white rounded-xl shadow-md overflow-hidden border-none p-6">
                 <form className="space-y-6" onSubmit={(e) => onSubmit(e)}>
@@ -174,7 +174,7 @@ export default function Contact() {
                   { isSendError && <p className="text-red-600 text-center">Une erreur est survenue, veuillez réessayer plus tard</p> }
                   <button
                     type="submit"
-                    className="w-full px-6 py-3 bg-yellow-300 hover:bg-yellow-400 text-black font-bold rounded-full"
+                    className="w-full px-6 py-3 bg-[#8B786D] hover:bg-[#BFA89E] text-white font-bold rounded-full"
                   >
                     Envoyer
                   </button>
@@ -183,20 +183,20 @@ export default function Contact() {
             </div>
 
             <div className="lg:w-1/2">
-              <h2 className="text-2xl md:text-3xl font-bold mb-8 text-teal-600 title-font">Nos coordonnées</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#5e503f] title-font">Nos coordonnées</h2>
 
               <div className="space-y-8">
                 <div className="bg-white rounded-xl shadow-md overflow-hidden border-none p-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-yellow-200 rounded-full flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-yellow-500" />
+                    <div className="w-12 h-12 bg-[#BFA89E] rounded-full flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-6 h-6 text-[#8B786D]" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-teal-600">Adresse</h3>
+                      <h3 className="text-lg font-bold mb-2 text-[#5e503f]">Adresse</h3>
                       <p className="text-gray-600">
-                        123 Rue des nuages
+                        1325 Route de Caraman
                         <br />
-                        75000 Paris
+                        81500 Lavaur
                         <br />
                         France
                       </p>
@@ -206,11 +206,11 @@ export default function Contact() {
 
                 <div className="bg-white rounded-xl shadow-md overflow-hidden border-none p-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-yellow-200 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-6 h-6 text-yellow-500" />
+                    <div className="w-12 h-12 bg-[#BFA89E] rounded-full flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-6 h-6 text-[#8B786D]" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-teal-600">Téléphone</h3>
+                      <h3 className="text-lg font-bold mb-2 text-[#5e503f]">Téléphone</h3>
                       <p className="text-gray-600">01 23 45 67 89</p>
                     </div>
                   </div>
@@ -218,31 +218,31 @@ export default function Contact() {
 
                 <div className="bg-white rounded-xl shadow-md overflow-hidden border-none p-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-yellow-200 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-6 h-6 text-yellow-500" />
+                    <div className="w-12 h-12 bg-[#BFA89E] rounded-full flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-6 h-6 text-[#8B786D]" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-teal-600">Email</h3>
+                      <h3 className="text-lg font-bold mb-2 text-[#5e503f]">Email</h3>
                       <p className="text-gray-600">contact@nuagedecoton.fr</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl shadow-md overflow-hidden border-none p-6">
+                {/* <div className="bg-white rounded-xl shadow-md overflow-hidden border-none p-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-yellow-200 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-6 h-6 text-yellow-500" />
+                    <div className="w-12 h-12 bg-[#BFA89E] rounded-full flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-6 h-6 text-[#8B786D]" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-teal-600">Horaires d&apos;ouverture</h3>
+                      <h3 className="text-lg font-bold mb-2 text-[#5e503f]">Horaires d&apos;ouverture</h3>
                       <p className="text-gray-600">
-                        Lundi - Vendredi: 7h30 - 18h30
+                        Lundi - Vendredi: 7h30 - 18h00
                         <br />
                         Fermé les week-ends et jours fériés
                       </p>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -250,9 +250,9 @@ export default function Contact() {
       </section>
 
       {/* Map Section */}
-      <section className="w-full py-16 bg-green-100">
+      <section className="w-full py-16 bg-[#f2e9e4]">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-teal-600 title-font">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-[#5e503f] title-font">
             Comment nous trouver
           </h2>
 
@@ -265,23 +265,22 @@ export default function Contact() {
       </section>
 
       {/* Pre-inscription CTA */}
-      <section className="w-full py-16 bg-sky-200 relative overflow-hidden">
+      {/* <section className="w-full py-16 bg-[#78A1BB] relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-teal-600 title-font">Pré-inscrivez votre enfant</h2>
-            <p className="text-lg mb-8 text-gray-700">
-              Vous souhaitez inscrire votre enfant à la MAM Nuage de coton ? Remplissez notre formulaire de
-              pré-inscription.
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#EBF5EE] title-font">Formulaire de contact</h2>
+            <p className="text-lg mb-8 text-[#EBF5EE]">
+              Envie d'en savoir d'avantage sur notre MAM ? Laissez-nous un petit message via le formulaire, nous vous répondrons avec plaisir
             </p>
-            <button className="px-6 py-3 bg-yellow-300 hover:bg-yellow-400 text-black font-bold rounded-full">
-              Formulaire de pré-inscription
+            <button className="px-6 py-3 bg-[#8B786D] hover:bg-[#BFA89E] text-white font-bold rounded-full">
+              Formulaire de contact
             </button>
           </div>
         </div>
 
-        {/* Waves */}
+        
         <div className="absolute bottom-0 left-0 w-full">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 290" className="w-full">
             <path
               fill="#f0f9ff"
               fillOpacity="1"
@@ -289,7 +288,7 @@ export default function Contact() {
             ></path>
           </svg>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }
