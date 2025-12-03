@@ -25,7 +25,7 @@ export default function Home() {
                 href="/contact"
                 className="inline-block px-6 py-3 bg-[#8B786D] hover:bg-[#BFA89E] text-white font-bold rounded-full"
               >
-                Je pré-inscris mon enfant
+                Nous contactez
               </Link>
             </div>
             <div className="md:w-1/2 flex justify-center">

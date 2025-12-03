@@ -45,7 +45,7 @@ export default function Navigation() {
             href="/contact"
             className="px-4 py-2 bg-[#f2e9e4] hover:bg-[#BFA89E] text-[#78A1BB] font-bold rounded-full"
           >
-            Pré-inscription
+            Nous contactez
           </Link>
         </nav>
 
