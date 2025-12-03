@@ -60,16 +60,16 @@ export default function Home() {
       {/* Notre Structure */}
       <section className="w-full py-16 bg-sky-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#78A1BB] title-font">Notre maison d'assistantes maternelles</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#78A1BB] title-font">Notre maison d&apos;assistantes maternelles</h2>
 
           <div className="flex flex-col items-center text-center gap-8">
             <div className="md:w-1/2">
               <p className="text-lg mb-4 text-[#5e503f]">
                 À la MAM Nuage de Coton, nous accueillons vos enfants dans un petit cocon pensé pour leurs épanouissement.
-                Ici, ils peuvent grandir sereinement, découvrir, jouer, s'apaiser... et être pleinement eux-mêmes
+                Ici, ils peuvent grandir sereinement, découvrir, jouer, s&apos;apaiser... et être pleinement eux-mêmes
               </p>
               <p className="text-lg mb-4 text-[#5e503f]">
-                Située dans un cadre calme et verdouyant, la MAM offre une arrivée simple et sans stresse. À l'interieur, un espace chaleureux et luminaux attend vos enfants, compléter par un jolie jardin pour explorer et profiter du plein air.
+                Située dans un cadre calme et verdouyant, la MAM offre une arrivée simple et sans stresse. À l&apos;interieur, un espace chaleureux et luminaux attend vos enfants, compléter par un jolie jardin pour explorer et profiter du plein air.
               </p>
               <p className="text-lg mb-6 text-[#5e503f]">
                 Chaque journée et rythmée par des activitées douces, du jeu libre, des moments de calme et surtout une présence attentive et bienveillante, pour que votre enfant se sente en sécurité comme à la maison

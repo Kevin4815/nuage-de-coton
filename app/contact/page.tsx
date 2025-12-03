@@ -1,5 +1,5 @@
 "use client";
-import { Clock, Mail, MapPin, Phone } from "lucide-react"
+import { Mail, MapPin, Phone } from "lucide-react"
 import { useState } from "react";
 
 export default function Contact() {
@@ -69,7 +69,7 @@ export default function Contact() {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-[#EBF5EE] mb-6 title-font">Contactez-Nous</h1>
             <p className="text-lg md:text-xl mb-6 text-[#EBF5EE]">
-              Envie d'en savoir d'avantage sur notre MAM ? Laissez-nous un petit message via le formulaire, nous vous répondrons avec plaisir
+              Envie d&apos;en savoir d&apos;avantage sur notre MAM ? Laissez-nous un petit message via le formulaire, nous vous répondrons avec plaisir
             </p>
           </div>
         </div>

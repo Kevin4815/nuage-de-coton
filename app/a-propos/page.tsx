@@ -1,5 +1,3 @@
-import Image from "next/image"
-import { Brain, HeartHandshake, Utensils } from "lucide-react"
 
 export default function APropos() {
   return (
