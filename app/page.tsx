@@ -150,7 +150,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/a-propos"
-                className="px-4 py-3 rounded-full border border-[#8B786D] text-[#8B786D] hover:bg-[#8B786D] hover:text-white"
+                className="px-4 py-3 bg-sky-50 rounded-full border border-[#8B786D] text-[#8B786D] hover:bg-[#8B786D] hover:text-white"
               >
                 En savoir plus
               </Link>
