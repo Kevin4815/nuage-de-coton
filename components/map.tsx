@@ -1,22 +1,23 @@
-'use client';
+"use client";
 
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import type { LatLngExpression } from "leaflet";
 import L from "leaflet";
 
 import "leaflet/dist/leaflet.css";
-import iconRetinaUrl from "leaflet/dist/images/marker-icon-2x.png";
-import iconUrl from "leaflet/dist/images/marker-icon.png";
-import shadowUrl from "leaflet/dist/images/marker-shadow.png";
-
-// Configuration de l'icône par défaut des markers
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl,
-  iconUrl,
-  shadowUrl,
-});
 
 const position: LatLngExpression = [43.682025, 1.815413];
+
+// 🔹 Icône personnalisée utilisant les fichiers dans /public/leaflet
+const customIcon = L.icon({
+  iconUrl: "/leaflet/marker-icon.png",
+  iconRetinaUrl: "/leaflet/marker-icon-2x.png",
+  shadowUrl: "/leaflet/marker-shadow.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+});
 
 export default function LeafletMap() {
   return (
@@ -30,7 +31,7 @@ export default function LeafletMap() {
         attribution='&copy; OpenStreetMap contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={position}>
+      <Marker position={position} icon={customIcon}>
         <Popup>Nous trouver ici 🙂</Popup>
       </Marker>
     </MapContainer>
