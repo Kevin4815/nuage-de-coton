@@ -279,25 +279,43 @@ export default function Contact() {
                     </div>
                   </div>
                   <div className="flex flex-col">
-                      <label htmlFor="child-birth" className="block text-sm font-medium text-gray-700 pb-2">
-                        Date de naissance de l&apos;enfant
-                      </label>
-                    <input
-                      className="border border-gray-300 rounded-lg p-2 shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
-                      type="date"
-                      name="child-birth"
-                      value={childBirth}
-                      onChange={(e) => setChildBirth(e.target.value)}
-                    />
+                    <label
+                      htmlFor="child-birth"
+                      className="block text-sm font-medium text-gray-700 pb-2"
+                    >
+                      Date de naissance de l&apos;enfant
+                    </label>
+
+                    <div className="relative">
+                      <input
+                        type="date"
+                        name="child-birth"
+                        value={childBirth}
+                        onChange={(e) => setChildBirth(e.target.value)}
+                        className="
+                          w-full
+                          appearance-none
+                          border border-gray-300
+                          rounded-lg
+                          px-4 py-2
+                          text-gray-700
+                          shadow-sm
+                          bg-white
+                          focus:outline-none
+                          focus:ring-2
+                          focus:ring-[#78A1BB]
+                          focus:border-[#78A1BB]
+                          text-base
+                        "
+                      />
+                    </div>
                   </div>
 
-
-                  <fieldset className="flex justify-around items-center">
-                    <legend className="block text-sm font-medium text-gray-700 pb-4">
+                  <fieldset className="flex flex-col gap-4 md:flex-row md:justify-around md:items-center">
+                    <legend className="block text-sm font-medium text-gray-700 pb-2">
                       Situation :
                     </legend>
 
-                    {/* À naître */}
                     <label htmlFor="born" className="flex items-center gap-2 cursor-pointer">
                       <input
                         type="radio"
@@ -311,7 +329,6 @@ export default function Contact() {
                       À naître
                     </label>
 
-                    {/* Nourrisson */}
                     <label htmlFor="infant" className="flex items-center gap-2 cursor-pointer">
                       <input
                         type="radio"
@@ -325,7 +342,6 @@ export default function Contact() {
                       Nourrisson
                     </label>
 
-                    {/* Marcheur */}
                     <label htmlFor="walker" className="flex items-center gap-2 cursor-pointer">
                       <input
                         type="radio"
@@ -338,12 +354,12 @@ export default function Contact() {
                       />
                       Marcheur
                     </label>
-                    {/* Autre */}
+
                     <label htmlFor="other" className="flex items-center gap-2 cursor-pointer">
                       <input
                         type="radio"
                         id="other"
-                        name="situation"
+                        name="accommodation-type"
                         value="Autre"
                         className="accent-blue-500"
                         checked={situation === "Autre"}
@@ -367,16 +383,16 @@ export default function Contact() {
 
                   <p className="text-lg text-center font-bold">Demande de l&apos;accueil</p>
 
-                  <fieldset className="flex justify-around items-center">
-                    <legend className="block text-sm font-medium text-gray-700 pb-4">
-                    Type d&apos;accueil souhaité :
+                  <fieldset className="flex flex-col gap-4 md:flex-row md:justify-around md:items-center">
+                    <legend className="block text-sm font-medium text-gray-700 pb-2">
+                      Type d&apos;accueil souhaité :
                     </legend>
 
                     <label htmlFor="regular" className="flex items-center gap-2 cursor-pointer">
                       <input
                         type="radio"
                         id="regular"
-                        name="situation"
+                        name="accommodation-type"  // (tu peux garder "situation" si tu veux, mais mieux d'avoir un nom différent du 1er groupe)
                         value="Régulier"
                         className="accent-blue-500"
                         checked={accommodationType === "Régulier"}
@@ -389,7 +405,7 @@ export default function Contact() {
                       <input
                         type="radio"
                         id="occasional"
-                        name="situation"
+                        name="accommodation-type"
                         value="Occasionnel"
                         className="accent-blue-500"
                         checked={accommodationType === "Occasionnel"}
@@ -402,7 +418,7 @@ export default function Contact() {
                       <input
                         type="radio"
                         id="after-school"
-                        name="situation"
+                        name="accommodation-type"
                         value="Périscolaire"
                         className="accent-blue-500"
                         checked={accommodationType === "Périscolaire"}
@@ -411,7 +427,6 @@ export default function Contact() {
                       Périscolaire
                     </label>
                   </fieldset>
-
 
                   <div className="space-y-2">
                     <label htmlFor="desired-day-and-time" className="block text-sm font-medium text-gray-700">
@@ -429,16 +444,36 @@ export default function Contact() {
                   </div>
 
                   <div className="flex flex-col">
-                      <label htmlFor="desired-start-date" className="block text-sm font-medium text-gray-700 pb-2">
-                        Date souhaitée de début d&apos;accueil
-                      </label>
-                    <input
-                      className="border border-gray-300 rounded-lg p-2 shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
-                      type="date"
-                      name="desired-start-date"
-                      value={desiredStartDate}
-                      onChange={(e) => setDesiredStartDate(e.target.value)}
-                    />
+                    <label
+                      htmlFor="desired-start-date"
+                      className="block text-sm font-medium text-gray-700 pb-2"
+                    >
+                      Date souhaitée de début d&apos;accueil
+                    </label>
+
+                    <div className="relative">
+                      <input
+                        type="date"
+                        name="desired-start-date"
+                        value={desiredStartDate}
+                        onChange={(e) => setDesiredStartDate(e.target.value)}
+                        className="
+                          w-full 
+                          appearance-none 
+                          border border-gray-300 
+                          rounded-lg 
+                          px-4 py-2 
+                          text-gray-700 
+                          shadow-sm 
+                          bg-white
+                          focus:outline-none 
+                          focus:ring-2 
+                          focus:ring-[#78A1BB] 
+                          focus:border-[#78A1BB]
+                          text-base
+                        "
+                      />
+                    </div>
                   </div>
 
                   <div className="space-y-2">
