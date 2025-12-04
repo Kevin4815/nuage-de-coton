@@ -18,7 +18,7 @@ export default function Navigation() {
     { name: "Accueil", href: "/" },
     { name: "À Propos", href: "/a-propos" },
     { name: "Contact", href: "/contact" },
-    { name: "Gallerie", href: "/gallery" },
+    { name: "Galerie", href: "/gallery" },
   ]
 
   return (
