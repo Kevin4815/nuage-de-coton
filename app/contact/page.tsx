@@ -279,37 +279,43 @@ export default function Contact() {
                     </div>
                   </div>
                   <div className="flex flex-col">
-                    <label
-                      htmlFor="child-birth"
-                      className="block text-sm font-medium text-gray-700 pb-2"
-                    >
-                      Date de naissance de l&apos;enfant
-                    </label>
+  <label
+    htmlFor="child-birth"
+    className="block text-sm font-medium text-gray-700 pb-2"
+  >
+    Date de naissance de l&apos;enfant
+  </label>
 
-                    <div className="relative">
-                      <input
-                        type="date"
-                        name="child-birth"
-                        value={childBirth}
-                        onChange={(e) => setChildBirth(e.target.value)}
-                        className="
-                          w-full
-                          appearance-none
-                          border border-gray-300
-                          rounded-lg
-                          px-4 py-2
-                          text-gray-700
-                          shadow-sm
-                          bg-white
-                          focus:outline-none
-                          focus:ring-2
-                          focus:ring-[#78A1BB]
-                          focus:border-[#78A1BB]
-                          text-base
-                        "
-                      />
-                    </div>
-                  </div>
+  <div className="relative">
+    <span className="absolute left-4 top-3 text-gray-400 pointer-events-none"
+      style={{ opacity: childBirth ? 0 : 1 }}
+    >
+      JJ/MM/AAAA
+    </span>
+
+    <input
+      type="date"
+      name="child-birth"
+      value={childBirth}
+      onChange={(e) => setChildBirth(e.target.value)}
+      className="
+        w-full
+        appearance-none
+        border border-gray-300
+        rounded-xl
+        px-4 py-3
+        text-gray-700
+        shadow-sm
+        bg-white
+        focus:outline-none
+        focus:ring-2
+        focus:ring-[#78A1BB]
+        focus:border-[#78A1BB]
+        text-base
+      "
+    />
+  </div>
+</div>
 
                   <fieldset className="flex flex-col gap-4 md:flex-row md:justify-around md:items-center">
                     <legend className="block text-sm font-medium text-gray-700 pb-2">
