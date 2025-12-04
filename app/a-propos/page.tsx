@@ -30,73 +30,80 @@ export default function APropos() {
       </section>
 
     {/* Notre Équipe */}
-    <section className="w-full py-16 bg-sky-50">
-  <div className="container mx-auto px-4">
-    <h2 className="text-3xl md:text-4xl font-bold text-center text-[#78A1BB] title-font mb-10">
-      Qui nous sommes ?
-    </h2>
+    <section className="w-full pb-16 bg-sky-50">
+      <div className="container mx-auto px-4">
+      <h2 className="
+          text-3xl md:text-4xl 
+          font-bold text-center 
+          text-[#78A1BB] title-font
+          mb-6      /* mobile : plus petit */
+          md:mb-0   /* >= 768px */
+          xl:mb-10  /* >= 1280px */
+        ">
+          Qui nous sommes ?
+        </h2>
 
-    {/* GRID : 1 colonne jusqu'à lg, 2 colonnes seulement en lg et + */}
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        {/* GRID : 1 colonne jusqu'à lg, 2 colonnes seulement en lg et + */}
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-1 items-center">
 
-      {/* Colonne gauche : nuage */}
-      <div className="flex justify-center w-full">
-        <svg
-          viewBox="0 0 500 350"
-          className="w-full h-auto"
-        >
-          <defs>
-            <clipPath id="cloudClip">
-              <path d="
-                M150 300
-                C 100 300, 70 260, 75 220
-                C 30 210, 35 160, 80 150
-                C 60 110, 110 70, 160 90
-                C 180 40, 260 40, 290 90
-                C 340 70, 390 110, 370 150
-                C 420 160, 430 210, 385 220
-                C 400 260, 370 300, 320 300
+          {/* Colonne gauche : nuage */}
+          <div className="flex justify-center w-full">
+            <svg
+              viewBox="0 0 500 350"
+              className="w-full h-auto"
+            >
+              <defs>
+                <clipPath id="cloudClip">
+                  <path d="
+                    M150 300
+                    C 100 300, 70 260, 75 220
+                    C 30 210, 35 160, 80 150
+                    C 60 110, 110 70, 160 90
+                    C 180 40, 260 40, 290 90
+                    C 340 70, 390 110, 370 150
+                    C 420 160, 430 210, 385 220
+                    C 400 260, 370 300, 320 300
 
-                C 290 320, 260 330, 230 300
-                C 200 330, 170 320, 150 300
-                Z"
+                    C 290 320, 260 330, 230 300
+                    C 200 330, 170 320, 150 300
+                    Z"
+                  />
+                </clipPath>
+              </defs>
+
+              <image
+                href="/images/personnes.jpg?height=320&width=320"
+                width="500"
+                height="450"
+                preserveAspectRatio="xMidYMid slice"
+                clipPath="url(#cloudClip)"
               />
-            </clipPath>
-          </defs>
+            </svg>
+          </div>
 
-          <image
-            href="/images/personnes.jpg?height=320&width=320"
-            width="500"
-            height="450"
-            preserveAspectRatio="xMidYMid slice"
-            clipPath="url(#cloudClip)"
-          />
-        </svg>
+          {/* Colonne droite : texte */}
+          <div className="max-w-3xl mx-auto px-2 md:px-6 md:py-4">
+            <p className="text-center text-lg leading-relaxed text-[#5e503f] mb-6">
+              <span className="font-semibold text-[#283044]">Jordane</span> et 
+              <span className="font-semibold text-[#283044]"> Sylvana</span>, deux professionnelles engagées et complémentaires, réunies par la même passion : accompagner les enfants dans la douceur, le respect et la bienveillance.
+            </p>
+
+            <p className="text-center text-lg leading-relaxed text-[#5e503f] mb-6">
+              Fortes de nos expériences auprès de jeunes enfants, nous partageons des valeurs communes qui sont au cœur de chaque journée à la MAM : l’écoute, la patience, la sécurité affective et le respect du rythme de chacun.
+            </p>
+
+            <p className="text-center text-lg leading-relaxed text-[#5e503f] mb-6">
+              À travers notre présence chaleureuse et nos personnalités différentes mais harmonieuses, nous offrons un environnement où chaque enfant peut grandir à son rythme, s’exprimer librement, découvrir, expérimenter et s’épanouir.
+            </p>
+
+            <p className="text-center text-lg leading-relaxed text-[#5e503f]">
+              Notre objectif : créer un lieu où l’on se sent en confiance, où l’enfant peut évoluer sereinement et où les familles se sentent accompagnées et soutenues.
+            </p>
+          </div>
+
+        </div>
       </div>
-
-      {/* Colonne droite : texte */}
-      <div className="max-w-3xl mx-auto px-2 md:px-6 md:py-4">
-        <p className="text-center text-lg leading-relaxed text-[#5e503f] mb-6">
-          <span className="font-semibold text-[#283044]">Jordane</span> et 
-          <span className="font-semibold text-[#283044]"> Sylvana</span>, deux professionnelles engagées et complémentaires, réunies par la même passion : accompagner les enfants dans la douceur, le respect et la bienveillance.
-        </p>
-
-        <p className="text-center text-lg leading-relaxed text-[#5e503f] mb-6">
-          Fortes de nos expériences auprès de jeunes enfants, nous partageons des valeurs communes qui sont au cœur de chaque journée à la MAM : l’écoute, la patience, la sécurité affective et le respect du rythme de chacun.
-        </p>
-
-        <p className="text-center text-lg leading-relaxed text-[#5e503f] mb-6">
-          À travers notre présence chaleureuse et nos personnalités différentes mais harmonieuses, nous offrons un environnement où chaque enfant peut grandir à son rythme, s’exprimer librement, découvrir, expérimenter et s’épanouir.
-        </p>
-
-        <p className="text-center text-lg leading-relaxed text-[#5e503f]">
-          Notre objectif : créer un lieu où l’on se sent en confiance, où l’enfant peut évoluer sereinement et où les familles se sentent accompagnées et soutenues.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
+    </section>
 
       {/* Notre Projet Pédagogique */}
       <section className="w-full py-16 bg-[#f2e9e4]">

@@ -1,13 +1,42 @@
 "use client";
 import { Mail, MapPin, Phone } from "lucide-react"
 import { useState } from "react";
+const LeafletMap = dynamic(() => import("@/components/map"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full flex items-center justify-center text-sm text-gray-500">
+      Chargement de la carte...
+    </div>
+  ),
+});
+import { formatDate } from "date-fns";
+import { fr } from "date-fns/locale";
+import dynamic from "next/dynamic";
 
 export default function Contact() {
 
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastName] = useState("");
+  // Parent information
+  const [parentFirstname, setParentFirstname] = useState("");
+  const [parentLastname, setParentLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [commune, setCommune] = useState("");
+
+  // Chil informations
+  const [childFirstname, setChildFirstname] = useState("");
+  const [childLastname, setcChildLastName] = useState("");
+  const [childBirth, setChildBirth] = useState("");
+
+  // Radio
+  const [situation, setSituation] = useState("");
+  const [accommodationType, setAccommodationType] = useState("");
+
+  const [otherInformations, setOtherInformations] = useState("");
+  //-----------------------------------------------//
+
+  const [desiredDatAndTime, setDesiredDatAndTime] = useState("");
+  const [desiredStartDate, setDesiredStartDate] = useState("");
+
   const [message, setMessage] = useState("");
 
   const [isSendSucces, setIsSendSucces] = useState(false);
@@ -16,30 +45,74 @@ export default function Contact() {
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
+
+    const birthDate = new Date(childBirth);
+    const desiredDate = new Date(desiredStartDate);
+
+    const birthDateFrench = formatDate(birthDate, "dd/MM/yyyy", { locale: fr })
+    const desiredDateFrench = formatDate(desiredDate, "dd/MM/yyyy", { locale: fr })
+
     try{
-      const res = await fetch('https://nuage-de-coton.novaryadigital.fr/contact.php', {
+      //const res = await fetch('https://nuage-de-coton.novaryadigital.fr/contact.php', {
+      const res = await fetch('http://localhost:8888/test-mail-php/contact.php', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          firstname,
-          lastname,
+          parentFirstname,
+          parentLastname,
           email,
           phone,
-          message,
+          commune,
+          childFirstname,
+          childLastname,
+          birthDateFrench,
+          situation,
+          accommodationType,
+          desiredDatAndTime,
+          desiredDateFrench,
+          message
         })
       });
     
       const data = await res.json();
       console.log("Réponse du serveur :", data);
+
+      // console.log(parentFirstname)
+      // console.log(parentLastname)
+      // console.log(email)
+      // console.log(phone)
+      // console.log(commune)
+
+      // console.log(childFirstname)
+      // console.log(desiredDate)
+      //console.log(formatDate(birthDatFrench, "dd/MM/yyyy", { locale: fr }))
+      // console.log(formatDate(desiredDate, "dd/MM/yyyy", { locale: fr }))
+
+      
+      // console.log(situation)
+      // console.log(otherInformations)
+      
+      // console.log(accommodationType)
+      // console.log(desiredDatAndTime)
+      // console.log(desiredStartDate)
+      // console.log(message)
   
-      setFirstname("");
-      setLastName("");
+      setParentFirstname("");
+      setParentLastName("");
       setEmail("");
       setPhone("");
       setMessage("");
+      setCommune("");
+      setChildFirstname("");
+      setcChildLastName("");
+      setChildBirth("");
+      setSituation("");
+      setAccommodationType("");
+      setDesiredDatAndTime("");
+      setDesiredStartDate("");
   
       setIsSendSucces(true);
   
@@ -95,70 +168,282 @@ export default function Contact() {
 
               <div className="bg-white rounded-xl shadow-md overflow-hidden border-none p-6">
                 <form className="space-y-6" onSubmit={(e) => onSubmit(e)}>
+                  <p className="text-lg text-center font-bold">Information sur les parents</p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
+                      <label htmlFor="parent-firstName" className="block text-sm font-medium text-gray-700">
                         Prénom
                       </label>
                       <input
                         type="text"
                         required
-                        value={firstname}
-                        onChange={(e) => setFirstname(e.target.value)}
-                        id="firstName"
+                        value={parentFirstname}
+                        onChange={(e) => setParentFirstname(e.target.value)}
+                        id="parent-firstName"
                         placeholder="Votre prénom"
                         className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
+                      <label htmlFor="parent-lastName" className="block text-sm font-medium text-gray-700">
                         Nom
                       </label>
                       <input
                         type="text"
                         required
-                        value={lastname}
-                        onChange={(e) => setLastName(e.target.value)}
-                        id="lastName"
+                        value={parentLastname}
+                        onChange={(e) => setParentLastName(e.target.value)}
+                        id="parent-lastName"
                         placeholder="Votre nom"
                         className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
                       />
                     </div>
                   </div>
 
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        id="email"
+                        placeholder="votre@email.com"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+                        Téléphone
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        id="phone"
+                        placeholder="Votre numéro de téléphone"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                      />
+                    </div>
+                  </div>
+
                   <div className="space-y-2">
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                      Email
+                    <label htmlFor="commune" className="block text-sm font-medium text-gray-700">
+                      Commune
                     </label>
                     <input
-                      type="email"
+                      type="commune"
                       required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      id="email"
-                      placeholder="votre@email.com"
+                      value={commune}
+                      onChange={(e) => setCommune(e.target.value)}
+                      id="commune"
+                      placeholder="Commune"
                       className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
                     />
                   </div>
 
+                  <p className="text-lg text-center font-bold">Information sur l&apos;enfant</p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label htmlFor="child-firstName" className="block text-sm font-medium text-gray-700">
+                        Prénom
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={childFirstname}
+                        onChange={(e) => setChildFirstname(e.target.value)}
+                        id="child-firstName"
+                        placeholder="Prénom enfant"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="child-lastName" className="block text-sm font-medium text-gray-700">
+                        Nom
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={childLastname}
+                        onChange={(e) => setcChildLastName(e.target.value)}
+                        id="child-lastName"
+                        placeholder="Nom enfant"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex flex-col">
+                      <label htmlFor="child-birth" className="block text-sm font-medium text-gray-700 pb-2">
+                        Date de naissance de l&apos;enfant
+                      </label>
+                    <input
+                      className="border border-gray-300 rounded-lg p-2 shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                      type="date"
+                      name="child-birth"
+                      value={childBirth}
+                      onChange={(e) => setChildBirth(e.target.value)}
+                    />
+                  </div>
+
+
+                  <fieldset className="flex justify-around items-center">
+                    <legend className="block text-sm font-medium text-gray-700 pb-4">
+                      Situation :
+                    </legend>
+
+                    {/* À naître */}
+                    <label htmlFor="born" className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        id="born"
+                        name="accommodation-type"
+                        value="À naître"
+                        className="accent-blue-500"
+                        checked={situation === "À naître"}
+                        onChange={(e) => setSituation(e.target.value)}
+                      />
+                      À naître
+                    </label>
+
+                    {/* Nourrisson */}
+                    <label htmlFor="infant" className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        id="infant"
+                        name="accommodation-type"
+                        value="Nourrisson"
+                        className="accent-blue-500"
+                        checked={situation === "Nourrisson"}
+                        onChange={(e) => setSituation(e.target.value)}
+                      />
+                      Nourrisson
+                    </label>
+
+                    {/* Marcheur */}
+                    <label htmlFor="walker" className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        id="walker"
+                        name="accommodation-type"
+                        value="Marcheur"
+                        className="accent-blue-500"
+                        checked={situation === "Marcheur"}
+                        onChange={(e) => setSituation(e.target.value)}
+                      />
+                      Marcheur
+                    </label>
+                    {/* Autre */}
+                    <label htmlFor="other" className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        id="other"
+                        name="situation"
+                        value="Autre"
+                        className="accent-blue-500"
+                        checked={situation === "Autre"}
+                        onChange={(e) => setSituation(e.target.value)}
+                      />
+                      Autre
+                    </label>
+                  </fieldset>
+
+                  { situation == "Autre" && <div className="space-y-2">
+                    <input
+                      type="other-information"
+                      required
+                      value={otherInformations}
+                      onChange={(e) => setOtherInformations(e.target.value)}
+                      id="other-information"
+                      placeholder="Autres..."
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                    />
+                  </div> }
+
+                  <p className="text-lg text-center font-bold">Demande de l&apos;accueil</p>
+
+                  <fieldset className="flex justify-around items-center">
+                    <legend className="block text-sm font-medium text-gray-700 pb-4">
+                    Type d&apos;accueil souhaité :
+                    </legend>
+
+                    <label htmlFor="regular" className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        id="regular"
+                        name="situation"
+                        value="Régulier"
+                        className="accent-blue-500"
+                        checked={accommodationType === "Régulier"}
+                        onChange={(e) => setAccommodationType(e.target.value)}
+                      />
+                      Régulier
+                    </label>
+
+                    <label htmlFor="occasional" className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        id="occasional"
+                        name="situation"
+                        value="Occasionnel"
+                        className="accent-blue-500"
+                        checked={accommodationType === "Occasionnel"}
+                        onChange={(e) => setAccommodationType(e.target.value)}
+                      />
+                      Occasionnel
+                    </label>
+
+                    <label htmlFor="after-school" className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        id="after-school"
+                        name="situation"
+                        value="Périscolaire"
+                        className="accent-blue-500"
+                        checked={accommodationType === "Périscolaire"}
+                        onChange={(e) => setAccommodationType(e.target.value)}
+                      />
+                      Périscolaire
+                    </label>
+                  </fieldset>
+
+
                   <div className="space-y-2">
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                      Téléphone
+                    <label htmlFor="desired-day-and-time" className="block text-sm font-medium text-gray-700">
+                      Jour et horaires souhaités
                     </label>
                     <input
-                      type="text"
+                      type="desired-day-and-time"
                       required
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      id="phone"
-                      placeholder="Votre numéro de téléphone"
+                      value={desiredDatAndTime}
+                      onChange={(e) => setDesiredDatAndTime(e.target.value)}
+                      id="desired-day-and-time"
+                      placeholder="Les jours et horaires que vous souhaitez"
                       className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                    />
+                  </div>
+
+                  <div className="flex flex-col">
+                      <label htmlFor="desired-start-date" className="block text-sm font-medium text-gray-700 pb-2">
+                        Date souhaitée de début d&apos;accueil
+                      </label>
+                    <input
+                      className="border border-gray-300 rounded-lg p-2 shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                      type="date"
+                      name="desired-start-date"
+                      value={desiredStartDate}
+                      onChange={(e) => setDesiredStartDate(e.target.value)}
                     />
                   </div>
 
                   <div className="space-y-2">
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                      Message
+                      Message ou questions
                     </label>
                     <textarea
                       value={message}
@@ -252,13 +537,12 @@ export default function Contact() {
       {/* Map Section */}
       <section className="w-full py-16 bg-[#f2e9e4]">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-[#5e503f] title-font">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-[#78A1BB] title-font">
             Comment nous trouver
           </h2>
-
           <div className="aspect-video w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg">
             <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-              <p className="text-gray-500">Carte interactive ici</p>
+            <LeafletMap />
             </div>
           </div>
         </div>

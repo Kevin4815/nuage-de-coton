@@ -31,7 +31,7 @@ export default function Home() {
             <div className="md:w-1/2 flex justify-center">
               <div className="relative w-64 h-64 md:w-80 md:h-80">
                 <Image
-                  src="/images/ourson-nuage.jpg?height=320&width=320"
+                  src="/images/ourson-nuage.png?height=320&width=320"
                   alt="Enfants jouant"
                   width={320}
                   height={320}
@@ -58,7 +58,7 @@ export default function Home() {
       </section>
 
       {/* Notre Structure */}
-      <section className="w-full py-16 bg-sky-50">
+      <section className="w-full pb-16 bg-sky-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#78A1BB] title-font">Notre maison d&apos;assistantes maternelles</h2>
 
@@ -77,9 +77,12 @@ export default function Home() {
               <p className="text-lg mb-6 text-[#5e503f]">
                 Bienvenue dans un univers pensé pour le bien être des tous petits... et la tranquillité des parents
               </p>
-              <button className="px-4 py-2 rounded-full border border-[#8B786D] text-[#8B786D] hover:bg-[#8B786D] hover:text-white">
+              <Link
+                href="/a-propos"
+                className="px-4 py-3 rounded-full border border-[#8B786D] text-[#8B786D] hover:bg-[#8B786D] hover:text-white"
+              >
                 En savoir plus
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -147,7 +150,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/a-propos"
-                className="px-6 py-3 rounded-full border border-[#283044] text-[#283044] hover:bg-[#283044] hover:text-white"
+                className="px-4 py-3 rounded-full border border-[#8B786D] text-[#8B786D] hover:bg-[#8B786D] hover:text-white"
               >
                 En savoir plus
               </Link>

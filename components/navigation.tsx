@@ -18,6 +18,7 @@ export default function Navigation() {
     { name: "Accueil", href: "/" },
     { name: "À Propos", href: "/a-propos" },
     { name: "Contact", href: "/contact" },
+    { name: "Gallerie", href: "/gallery" },
   ]
 
   return (
@@ -61,15 +62,15 @@ export default function Navigation() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-sky-100 p-4 shadow-md z-50">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-[#8B786D] p-4 shadow-md z-50">
           <nav className="flex flex-col space-y-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "text-lg font-medium transition-colors hover:text-teal-600 p-2",
-                  pathname === item.href ? "text-teal-600 bg-sky-200 rounded-md" : "text-gray-600",
+                  "text-lg font-medium transition-colors hover:text-[#78A1BB] p-2",
+                  pathname === item.href ? "text-[#EBF5EE] bg-[#78A1BB] rounded-md" : "text-gray-600",
                 )}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -78,10 +79,10 @@ export default function Navigation() {
             ))}
             <Link
               href="/contact"
-              className="px-4 py-2 bg-yellow-300 hover:bg-yellow-400 text-black font-bold rounded-full text-center"
+              className="px-4 py-2 bg-[#f2e9e4] hover:bg-[#BFA89E] text-[#78A1BB] font-bold rounded-full text-center"
               onClick={() => setIsMenuOpen(false)}
             >
-              Pré-inscription
+              Nous contactez
             </Link>
           </nav>
         </div>
